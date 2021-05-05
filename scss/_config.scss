@@ -1,0 +1,45 @@
+$primary-color: #444;
+$secondary-color: #eeceee;
+$show-home-image: true;
+$home-image: url('../img/IMG_2425.jpeg');
+$background-opacity: 0.5;
+
+@mixin easeOut {
+    transition: all 0.5s ease-out;
+}
+
+@mixin background {
+    @if $show-home-image {
+        video {
+            object-fit: cover;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+        
+            // &:after {
+            //     content: 'BLAH';
+            //     position: absolute;
+            //     top: 0;
+            //     right: 0;
+            //     width: 100%;
+            //     height: 100%;
+            //     z-index: -1;
+            //     background: rgba(#fff, $background-opacity);
+            // }
+        }
+        &#bg-img {
+            .overlay {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background: rgba(#fff, $background-opacity);
+            }
+        }
+    }
+}
