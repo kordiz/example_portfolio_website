@@ -1,5 +1,5 @@
-$primary-color: #444;
-$secondary-color: #eeceee;
+$primary-color: #000;
+$secondary-color: #00ffea;
 $show-home-image: true;
 $home-image: url('../img/IMG_2425.jpeg');
 $background-opacity: 0.5;
@@ -12,8 +12,8 @@ $background-opacity: 0.5;
     @if $show-home-image {
         video {
             object-fit: cover;
-            width: 100vw;
-            height: 100vh;
+            //width: 100vh;
+            //height: 100vh;
             position: absolute;
             top: 0;
             left: 0;
@@ -41,6 +41,15 @@ $background-opacity: 0.5;
                 background: rgba(#fff, $background-opacity);
             }
         }
+    }
+}
+
+//Set Text Color
+@function set-text-color($color) {
+    @if (lightness($color) > 40) {
+        @return #000;
+    } @else {
+        @return #fff;
     }
 }
 
